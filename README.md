@@ -62,13 +62,13 @@ O código demonstra a extração de bits usando a lógica de máscara e AND bitw
 
 #### Função Genérica
 
-A função `extrai_bit_generico(uint8_t byte, int n)` encapsula a técnica mais comum para extrair o valor de um bit na posição `n` (onde $0 \le n \le 7$):
+A função `extrai_bit_generico(uint8_t byte, int n)` encapsula a técnica mais comum para extrair o valor de um bit na posição `n` (onde 0 <= n <= 7):
 
-$$\text{Retorno} = (\text{byte} \ \&\ (1 \ll n)) \neq 0$$
+`Retorno = ()byte & (1 << n)) != 0`
 
 -   **Passo 1: Máscara (`(1 << n)`)** - Cria uma máscara onde apenas o bit na posição $n$ é 1.
     
-    -   Exemplo: Para Bit 5, $1 \ll 5$ resulta em `0b00100000`.
+    -   Exemplo: Para Bit 5, 1 << 5resulta em `0b00100000`.
         
 -   **Passo 2: AND Bitwise (`&`)** - Aplica a máscara ao byte para isolar o bit. Se o bit original era 1, o resultado será não-zero. Se era 0, o resultado será zero.
     
